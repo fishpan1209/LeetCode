@@ -32,12 +32,12 @@ Special thanks to [@ syedee](https://leetcode.com/discuss/user/syedee) for addin
 
 <div>
 
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[Dynamic Programming](/tag/dynamic-programming/) [Bit Manipulation](/tag/bit-manipulation/)</span></div>
+<span class="hidebutton" style="display: inline;">[Dynamic Programming](/tag/dynamic-programming/) [Bit Manipulation](/tag/bit-manipulation/)</span></div>
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
 
-<span class="hidebutton">[(E) Number of 1 Bits](/problems/number-of-1-bits/)</span></div>
+<span class="hidebutton" style="display: inline;">[(E) Number of 1 Bits](/problems/number-of-1-bits/)</span></div>
