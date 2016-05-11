@@ -12,7 +12,7 @@ public class Solution {
         int h = height(root);
         if(h==0) return 0;
         // if right tree height = left tree height, left nodes(2^(h-1))+right nodes
-        // else 
+        // else right tree is full, count left tree
         return height(root.right)==h-1? (1<<h-1)+countNodes(root.right):(1<<h-2)+countNodes(root.left);
     }
     
