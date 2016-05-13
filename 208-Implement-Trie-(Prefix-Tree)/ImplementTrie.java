@@ -7,11 +7,16 @@ class TrieNode {
     private char character;
     
     public TrieNode() {
-        this.root = new TrieNode();
         this.children = new TrieNode[26];
         this.isLeaf = true;
         this.isWord = false;
     }
+    
+     public TrieNode(char character)
+   {
+      this();
+      this.character = character;
+   }
     
     protected TrieNode getNode(char c){
         return children[c-'a'];
