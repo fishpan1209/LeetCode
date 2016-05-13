@@ -4,12 +4,13 @@ public class TrieNode{
 }
 
 public class WordDictionary {
-    private TrieNode root;
-    
-    public WordDictionary(){
-        this.root = new TrieNode();
+    class TrieNode{
+        public boolean isWord;
+        public children[] = new TrieNode[26];
     }
-
+    
+    TrieNode root = new TrieNode();
+    
     // Adds a word into the data structure.
     public void addWord(String word) {
         TrieNode ws = root;
