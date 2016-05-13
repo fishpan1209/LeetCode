@@ -9,7 +9,7 @@ the contiguous subarray `[4,−1,2,1]` has the largest sum = `6`.
 
 [click to show more practice.](#)
 
-<div class="spoilers" style="display: none;">**More practice:**
+<div class="spoilers" style="display: block;">**More practice:**
 
 If you have figured out the O(_n_) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
