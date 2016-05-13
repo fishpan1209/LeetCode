@@ -37,21 +37,9 @@ class TrieNode {
       children[charPos].isWord = true;
       }
    }
-   
-   protected boolean search(String word)
-   {
-       for(int i=0; i<word.length(); i++){
-           if(children[word.charAt(i)-'a'] == null) return false;
-       }
-       return true;
-     }
 
 }
 
-return list; 
-
-}
-}
 
 public class Trie {
     private TrieNode root;
@@ -67,7 +55,13 @@ public class Trie {
 
     // Returns if the word is in the trie.
     public boolean search(String word) {
-        return root.search(word);
+        TrieNode ws = root; 
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            if(ws.children[c - 'a'] == null) return false;
+            ws = ws.children[c - 'a'];
+        }
+        return ws.isWord;
     }
 
     // Returns if there is any word in the trie
