@@ -30,7 +30,7 @@ class TrieNode {
       if (children[charPos] == null)
       {
       children[charPos] = new TrieNode(word.charAt(0));
-      children[charPos].parent = this;
+      children[charPos].root = this;
       }
       
       if (word.length() > 1)
