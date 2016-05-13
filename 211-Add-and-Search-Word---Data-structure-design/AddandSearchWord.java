@@ -34,7 +34,7 @@ public class WordDictionary {
         else {
             for(int i=0; i<root.children.length; i++){
                 if(root.children[i] != null){
-                    if(search(root.children[i], word, pos+1) return true;
+                    if(search(root.children[i], word, pos+1)) return true;
                 }
             }
         }
