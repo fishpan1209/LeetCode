@@ -1,10 +1,10 @@
 class TrieNode {
     // Initialize your data structure here.
-    private TrieNode root;
-    private TrieNode[] children;
-    private boolean isLeaf;
-    private boolean isWord;
-    private char character;
+    public TrieNode root;
+    public TrieNode[] children;
+    public boolean isLeaf;
+    public boolean isWord;
+    public char character;
     
     public TrieNode() {
         this.children = new TrieNode[26];
@@ -18,11 +18,11 @@ class TrieNode {
       this.character = character;
    }
     
-    protected TrieNode getNode(char c){
+    public TrieNode getNode(char c){
         return children[c-'a'];
     }
     
-    protected void addWord(String word)
+    public void addWord(String word)
    {
       isLeaf = false;
       int charPos = word.charAt(0) - 'a';
