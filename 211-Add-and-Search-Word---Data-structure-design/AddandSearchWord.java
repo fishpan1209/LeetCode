@@ -1,8 +1,8 @@
 
 public class WordDictionary {
     class TrieNode{
-        public boolean isWord;
-        public children[] = new TrieNode[26];
+        boolean isWord;
+        TrieNode[] children = new TrieNode[26];
     }
     
     TrieNode root = new TrieNode();
@@ -26,8 +26,14 @@ public class WordDictionary {
         TrieNode ws = root;
         for(int i=0; i<word.length(); i++){
             char c = word.charAt(i);
-            if(c=='.') continue;
-            if(ws.children[c-'a']==null) return false;
+            if(c != '.'){
+                if(ws.children[c-'a']==null) return false;
+                
+            }
+            else {
+                if(i<word.length()-1) c= word.charAt(i+1);
+                else return true;
+            }
             ws = ws.children[c-'a'];
         }
         return true;
