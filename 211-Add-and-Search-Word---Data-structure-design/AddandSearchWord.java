@@ -1,7 +1,3 @@
-public class TrieNode{
-    public boolean isWord;
-    public children[] = new TrieNode[26];
-}
 
 public class WordDictionary {
     class TrieNode{
