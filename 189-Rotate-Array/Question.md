@@ -11,7 +11,7 @@ Try to come up as many solutions as you can, there are at least 3 different ways
 
 [[show hint]](#)
 
-<div class="spoilers" style="display: none;">**Hint:**  
+<div class="spoilers" style="display: block;">**Hint:**  
 Could you do it in-place with O(1) extra space?</div>
 
 Related problem: [Reverse Words in a String II](/problems/reverse-words-in-a-string-ii/)
@@ -27,18 +27,18 @@ Special thanks to [@Freezen](https://oj.leetcode.com/discuss/user/Freezen) for a
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
 
-<span class="hidebutton">[Bloomberg](/company/bloomberg/) [Microsoft](/company/microsoft/)</span></div>
-
-<div>
-
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
-
-<span class="hidebutton">[Array](/tag/array/)</span></div>
+<span class="hidebutton" style="display: inline;">[Bloomberg](/company/bloomberg/) [Microsoft](/company/microsoft/)</span></div>
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[(M) Rotate List](/problems/rotate-list/) [(M) Reverse Words in a String II](/problems/reverse-words-in-a-string-ii/)</span></div>
+<span class="hidebutton" style="display: inline;">[Array](/tag/array/)</span></div>
+
+<div>
+
+<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
+
+<span class="hidebutton" style="display: inline;">[(M) Rotate List](/problems/rotate-list/) [(M) Reverse Words in a String II](/problems/reverse-words-in-a-string-ii/)</span></div>
