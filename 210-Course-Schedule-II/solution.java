@@ -9,7 +9,7 @@ public class Solution {
             graph.get(prerequisites[i][1]).add(prerequisites[i][0]);
         }
         
-        boolean visited = new boolean[numCourses];
+        boolean[] visited = new boolean[numCourses];
         
         for(int i=0; i<numCourses; i++){
             if(!dfs(graph, visited, i)){
