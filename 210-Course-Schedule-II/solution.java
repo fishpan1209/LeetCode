@@ -19,17 +19,17 @@ public class Solution {
         return res;
     }
     
-    public boolean dfs(ArrayList<ArrayList<Integer>> graph, boolean[] visited, int course){
-        if(visited[course])
-                return false;
-        else
-            visited[course] = true;;
-
-        for(int i=0; i<graph[course].size();i++){
-            if(!dfs(graph,visited,(int)graph[course].get(i)))
-                return false;
-        }
-        visited[course] = false;
+     public boolean dfs(ArrayList<ArrayList<Integer>> graph, boolean[] visited, int newCourse){
+        // System.out.println(newCourse);
+        if(visited[newCourse]) return false;
+        visited[newCourse] = true;
+        //
+        for(int i=0; i<graph.get(newCourse).size();i++){
+                if(!dfs(graph,visited,(int)graph.get(newCourse).get(i)))
+                    return false;
+            }
+        
+        visited[newCourse] = false;
         return true;
     }
 }
