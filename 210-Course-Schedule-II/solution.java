@@ -12,7 +12,7 @@ public class Solution {
         boolean visited = new boolean[numCourses];
         
         for(int i=0; i<numCourses; i++){
-            if(!dfs(graph, visited, i){
+            if(!dfs(graph, visited, i)){
                 res.add(i);
             }
         }
