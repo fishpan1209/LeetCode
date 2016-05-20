@@ -1,0 +1,61 @@
+# Read from the file words.txt and output the word frequency list to stdout.
+Class WordFrequency{
+    public WordFrequency(){
+        
+    }
+    
+    public String[] getWords(String filename) throws IOException {
+		ArrayList<String> words = new ArrayList();
+		
+		try {
+			File file = new File(filename);
+			FileInputStream in = new FileInputStream(file);
+			BufferedReader br = new BufferedReader(new InputStreamReader(in)); 
+			String line = null;
+			while ((line = br.readLine()) != null) {
+				String[] wl = line.split(" ");
+				for(String s: wl) words.add(s);
+			}
+		 
+			br.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return (String[]) words.toArray();
+	}
+
+	public void getFreq(String[] words) {
+		HashMap<String, Integer> map = new HashMap();
+		ArrayList<String>[] bucket = new ArrayList[words.length+1];
+		for (int i = 0; i < words.length; i++) {
+			if (map.containsKey(words[i])) {
+				map.put(words[i], map.get(words[i]) + 1);
+			} else {
+				map.put(words[i], 1);
+			}
+		}
+		for (String key : map.keySet()) {
+			int freq = map.get(key);
+			if (bucket[freq] == null) {
+				bucket[freq] = new ArrayList();
+			}
+			// bucket is ordered by freq as index
+			bucket[freq].add(key);
+		}
+
+		for (int i = bucket.length - 1; i > 0; i--) {
+			if (bucket[i] != null) {
+				for(int j=0; j<bucket[i].size();j++){
+					System.out.println(bucket[i].get(j)+": "+i);
+				}
+			}
+		}
+		}
+    
+    public static void main(String[] args){
+        WordFrequency wf = new WordFrequency();
+        String[] words = wf.getWords("words.txt");
+        wf.getFreq;
+    }
+}
