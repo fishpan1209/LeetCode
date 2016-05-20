@@ -13,7 +13,7 @@ public class Solution {
         
         for(int i=0; i<numCourses; i++){
             if(!dfs(graph, visited, i)){
-                res.add(i);
+                res[i] = graph.get(i).get(0);
             }
         }
         return res;
