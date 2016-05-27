@@ -1,22 +1,18 @@
 public class Solution {
     public String getPermutation(int n, int k) {
-        StringBuilder res = new StringBuilder();
-        int factorial = 1;
-        // create nums list and n!
-        ArrayList<Integer> nums = new ArrayList();
-        for(int i=1; i<=n; i++){
-            nums.add(i);
-            factorial *= i;
+        StringBuilder sb = new StringBuilder();
+        ArrayList<Integer> num = new ArrayList<Integer>();
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+            num.add(i);
         }
-       
-        for(int i=0; i<n; i++){
-            factorial /= (n-i);
-            // must use k-1 becuase 0-based
-            int index = (k-1)/factorial;
-            res.append(nums.get(index));
-            nums.remove(index);
-            k -= index*factorial;
+        for (int i = 0, l = k - 1; i < n; i++) {
+            fact /= (n - i);
+            int index = (l / fact);
+            sb.append(num.remove(index));
+            l -= index * fact;
         }
-        return res.toString();
+        return sb.toString();
     }
 }
