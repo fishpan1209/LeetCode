@@ -11,14 +11,11 @@ public class Solution {
        
         for(int i=0; i<n; i++){
             factorial /= (n-i);
-            System.out.println(factorial);
             // must use k-1 becuase 0-based
             int index = (k-1)/factorial;
-            System.out.println(index);
             res.append(nums.get(index));
             nums.remove(index);
             k -= index*factorial;
-            System.out.println("k: "+k);
         }
         return res.toString();
     }
