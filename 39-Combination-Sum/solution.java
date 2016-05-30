@@ -8,7 +8,10 @@ public class Solution {
     }
     
     public void combination(List<List<Integer>> res, List<Integer> temp, int[] candidates, int target, int start){
-        if(target == 0) res.add(new ArrayList(temp));
+        if(target == 0) {
+            res.add(new ArrayList(temp));
+            return;
+        }
         
         for(int i= candidates.length-1; i>=0; i--){
             if(candidates[i]>target) continue;
