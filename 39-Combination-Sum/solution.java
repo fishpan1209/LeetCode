@@ -13,8 +13,7 @@ public class Solution {
             return;
         }
         
-        for(int i= candidates.length-1; i>=0; i--){
-            if(candidates[i]>target) continue;
+        for(int i= start; i<candidates.length && candidates[i]<=target; i++){
             temp.add(candidates[i]);
             combination(res, temp, candidates, target-candidates[i],i);
             temp.remove(temp.size()-1);
