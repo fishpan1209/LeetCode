@@ -6,6 +6,7 @@ public class Solution {
         for(int i=words.length-1; i>=0; i--){
             sb.append(words[i]+" ");
         }
+        // trim to remove leading or tailing spaces
         return sb.toString().trim();
     }
 }
