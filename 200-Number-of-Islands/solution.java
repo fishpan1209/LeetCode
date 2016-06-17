@@ -1,13 +1,14 @@
 public class Solution {
     public int numIslands(char[][] grid) {
-        if(grid==null || grid.length==0) return 0;
         int m = grid.length;
+        if(m==0 || grid==null) return 0;
         int n = grid[0].length;
-        int count=0;
+        int count = 0;
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
+                // if an island found, count++; set all connecting land to 0
                 if(grid[i][j]=='1'){
-                    drown(grid, i, j);
+                    drown(grid,i,j, m, n );
                     count++;
                 }
             }
@@ -15,12 +16,12 @@ public class Solution {
         return count;
     }
     
-    public void drown(char[][] grid, int i, int j){
-        if(i<0 || i>=grid.length || j<0 || j>=grid[0].length || grid[i][j]=='0') return;
+    public void drown(char[][] grid, int i, int j, int m, int n){
+        if(i>=m || i<0 || j>=n || j<0 || grid[i][j]!='1') return;
         grid[i][j]='0';
-        drown(grid, i+1, j);
-        drown(grid, i-1, j);
-        drown(grid, i, j+1);
-        drown(grid, i, j-1);
+        drown(grid, i+1, j, m, n);
+        drown(grid, i-1, j, m, n);
+        drown(grid, i, j+1, m, n);
+        drown(grid, i, j-1, m, n);
     }
 }
