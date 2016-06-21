@@ -8,9 +8,8 @@
  */
 public class Solution {
     public void connect(TreeLinkNode root) {
-         if(root == null)
-        return;
-    TreeLinkNode dummy = new TreeLinkNode(0);
+        if(root==null) return;
+        TreeLinkNode dummy = new TreeLinkNode(0);
     dummy.next = root;
     while(dummy.next != null){
         TreeLinkNode cur = dummy.next, pre = dummy;
@@ -23,5 +22,5 @@ public class Solution {
             cur = cur.next;
         }
     }
-}
+    }
 }
