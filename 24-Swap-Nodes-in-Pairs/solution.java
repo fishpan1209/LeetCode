@@ -9,6 +9,7 @@
 public class Solution {
     public ListNode swapPairs(ListNode head) {
         if(head==null || head.next==null) return head;
+        /*
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode res = dummy;
@@ -25,5 +26,12 @@ public class Solution {
             dummy = pre;
         }
         return res.next;
+        */
+        
+        // recursive
+        ListNode second = head.next;
+        head.next = swapPairs(head.next.next);
+        second.next = head;
+        return second;
     }
 }
