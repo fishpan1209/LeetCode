@@ -1,24 +1,22 @@
-import java.util.HashMap;
 public class Solution {
     public boolean isValid(String s) {
-        if(s==null||s.length()%2==1)
-            return false;
-        Stack<Character> stack = new Stack<>();
-        for(int i=0;i<s.length();i++){
-            char c = s.charAt(i);
-            if(c=='['||c=='{'||c=='(')
-                stack.push(c);
+        if(s==null) return true;
+        char[] ch = s.toCharArray();
+        if(ch.length%2 != 0) return false;
+        Stack<Character> stack = new Stack();
+        for(char c : ch){
+            if(c=='(' || c=='[' || c=='{') stack.push(c);
             else{
-                if(stack.isEmpty())
-                    return false;
-                else if(c==']' && stack.pop()!='[')
-                    return false;
-                else if(c==')' && stack.pop()!='(')
-                    return false;
-                else if(c=='}' && stack.pop()!='{')
-                    return false;
+                
+                if(!stack.isEmpty()){
+                    char left = stack.pop();
+                    if(left=='(' && c!=')') return false;
+                    if(left=='[' && c!=']') return false;
+                    if(left=='{' && c!='}') return false;
+                }
             }
         }
-        return stack.isEmpty();
+        if(!stack.isEmpty()) return false;
+        else return true;
     }
 }
