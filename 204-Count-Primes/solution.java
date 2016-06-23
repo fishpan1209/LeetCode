@@ -1,14 +1,13 @@
 public class Solution {
     public int countPrimes(int n) {
-        if(n<2) return 0;
-        boolean isPrime[] = new boolean[n]; // default value of boolean is false
-        for(int i=2; i<n; i++){
+        boolean[] isPrime = new boolean[n];
+        for(int i=2; i<n; i++){ // 1 is not prime; default is false
             isPrime[i] = true;
         }
         
-        for(int i=2; i*i<=n; i++){
-            if(!isPrime[i]) continue; // already marked, skip
-            for(int j= i*i; j<n; j+=i){ // starting from i^2, mark off all factors
+        for(int i=2; i*i<n; i++){
+            if(!isPrime[i]) continue;
+            for(int j= i*i; j<n; j+=i){
                 isPrime[j] = false;
             }
         }
