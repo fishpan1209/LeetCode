@@ -15,18 +15,18 @@ You may assume that _word1_ **does not equal to** _word2_, and _word1_ and _word
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
 
-<span class="hidebutton">[LinkedIn](/company/linkedin/)</span></div>
-
-<div>
-
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
-
-<span class="hidebutton">[Array](/tag/array/)</span></div>
+<span class="hidebutton" style="display: inline;">[LinkedIn](/company/linkedin/)</span></div>
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[(M) Shortest Word Distance II](/problems/shortest-word-distance-ii/) [(M) Shortest Word Distance III](/problems/shortest-word-distance-iii/)</span></div>
+<span class="hidebutton" style="display: inline;">[Array](/tag/array/)</span></div>
+
+<div>
+
+<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
+
+<span class="hidebutton" style="display: inline;">[(M) Shortest Word Distance II](/problems/shortest-word-distance-ii/) [(M) Shortest Word Distance III](/problems/shortest-word-distance-iii/)</span></div>
