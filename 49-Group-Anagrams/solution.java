@@ -17,11 +17,11 @@ public class Solution {
             // add all anagrams to list
             map.get(key).add(s);
         }
-        
+        /*
         for(String key : map.keySet()){
             Collections.sort(map.get(key));
         }
-        
+        */
         return new ArrayList<List<String>>(map.values());
     }
     // time limit exceeded
