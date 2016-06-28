@@ -17,15 +17,9 @@ If you have figured out the O(_n_) solution, try coding another solution using t
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Bloomberg](/company/bloomberg/) [LinkedIn](/company/linkedin/) [Microsoft](/company/microsoft/)</span></div>
+<span class="hidebutton">[LinkedIn](/company/linkedin/) [Bloomberg](/company/bloomberg/) [Microsoft](/company/microsoft/)</span></div>
 
 <div>
 
