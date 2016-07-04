@@ -11,13 +11,19 @@ public class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> res = new ArrayList();
         if(root==null) return res;
-        dfs(root, res, "");
+        path(root, res, "");
         return res;
     }
     
-    public void dfs(TreeNode root, List<String> res, String path){
-        if(root.left==null && root.right==null) res.add(path+root.val);
-        if(root.left!=null) dfs(root.left, res, path+root.val+"->");
-        if(root.right!=null) dfs(root.right, res, path+root.val+"->");
+    public void path(TreeNode root, List<String> res, String p){
+        if(root==null) return;
+        if(root.left==null && root.right==null){
+            p += root.val;
+            res.add(p);
+            return;
+        }
+        p += root.val+"->";
+        if(root.left!=null) path(root.left, res, p);
+        if(root.right!=null) path(root.right, res, p);
     }
 }
