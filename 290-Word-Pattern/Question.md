@@ -21,12 +21,6 @@ Special thanks to [@minglotus6](https://leetcode.com/discuss/user/minglotus6) fo
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
 <span class="hidebutton">[Dropbox](/company/dropbox/) [Uber](/company/uber/)</span></div>
