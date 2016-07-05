@@ -9,9 +9,7 @@
  */
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        // inorder: left-root-right
         List<Integer> res = new ArrayList();
-        if(root==null) return res;
         inorder(root, res);
         return res;
     }
