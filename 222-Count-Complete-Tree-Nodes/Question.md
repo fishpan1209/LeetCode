@@ -9,12 +9,6 @@ In a complete binary tree every level, except possibly the last, is completely f
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Tree](/tag/tree/) [Binary Search](/tag/binary-search/)</span></div>
