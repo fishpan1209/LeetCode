@@ -10,26 +10,17 @@
 public class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
         if(nums==null || nums.length==0) return null;
-        else return toBST(0, nums.length-1, nums);
+        return sortedArrayToBST(nums, 0, nums.length-1);
+        
     }
     
-    public TreeNode toBST(int start, int end, int[] nums){
-        int mid = start+(end-start)/2;
+    public TreeNode sortedArrayToBST(int[] nums, int start, int end){
+        if(start<0 || end>=nums.length || start>end) return null;
+        if(start==end) return new TreeNode(nums[start]);
+        int mid = (start+end)/2;
         TreeNode root = new TreeNode(nums[mid]);
-        // if start=end, add current node, then return
-        if(start==end) {
-            return root;
-        }
-        if(start>mid-1) root.left = null; // left boundary
-        else {
-            TreeNode left = toBST(start, mid-1, nums);
-            root.left = left;
-        }
-        if(mid+1>end) root.right = null; // right boundary
-        else {
-            TreeNode right = toBST(mid+1, end, nums);
-            root.right = right;
-        }
+        root.left = sortedArrayToBST(nums, start, mid-1);
+        root.right = sortedArrayToBST(nums, mid+1, end);
         return root;
     }
 }
