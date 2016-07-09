@@ -10,12 +10,6 @@ return `4->5->1->2->3->NULL`.
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Linked List](/tag/linked-list/) [Two Pointers](/tag/two-pointers/)</span></div>
