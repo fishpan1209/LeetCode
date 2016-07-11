@@ -16,8 +16,8 @@ public class Solution {
         }
         return ans;
     }
-    
-    class UnionFind2D {
+
+class UnionFind2D {
     private int[] id;
     private int[] sz;
     private int m, n, count;
@@ -50,7 +50,7 @@ public class Solution {
     public boolean find(int p, int q) {
         return root(p) == root(q);
     }
-    
+
     public void unite(int p, int q) {
         int i = root(p), j = root(q);
         if (sz[i] < sz[j]) { //weighted quick union
@@ -66,5 +66,5 @@ public class Solution {
             id[i] = id[id[i]]; //path compression
         return i;
     }
-    }
+}
 }
