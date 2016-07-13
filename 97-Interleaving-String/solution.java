@@ -1,10 +1,16 @@
 public class Solution {
     public boolean isInterleave(String s1, String s2, String s3) {
-        if((s1.length()==0 || s1==null) && (s2.length()==0 || s2==null)) return (s3.length()==0 || s3==null);
-        else if(s1==null || s1.length()==0) return s3.equals(s2);
-        else if(s2==null || s2.length()==0) return s3.equals(s1);
-        else if(s3.length()!=(s1.length()+s2.length())) return false;
-        char c = s3.charAt(0);
-        return (s1.charAt(0)==c && isInterleave(s1.substring(1),s2, s3.substring(1))) || (s2.charAt(0)==c && isInterleave(s1, s2.substring(1), s3.substring(1)));
+        char[] ss1 = s1.toCharArray();
+        char[] ss2 = s2.toCharArray();
+        char[] ss3 = s3.toCharArray();
+        if((ss1.length+ss2.length)!=ss3.length) return false;
+        return interleave(ss1, 0, ss2, 0, ss3, 0);
+    }
+    
+    public boolean interleave(char[] s1, int p1, char[] s2, int p2, char[] s3, int p3){
+        if((s1.length+s2.length)!=s3.length) return false;
+        if(p1==s1.length) return String.valueOf(s2, p2, s2.length).equals(String.valueOf(s3, p3, s3.length));
+        if(p2==s2.length) return String.valueOf(s1, p1, s1.length).equals(String.valueOf(s3, p3, s3.length));
+        return (s1[p1]==s3[p3++] && interleave(s1, p1+1, s2, p2, s3, p3)) || (s2[p2]==s3[p3++] && interleave(s1, p1, s2, p2+1, s3, p3));
     }
 }
