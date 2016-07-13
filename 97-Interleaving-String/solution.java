@@ -1,5 +1,4 @@
 public class Solution {
-    public boolean isInterleave(String s1, String s2, String s3) {
         private static Set<Integer> visited; // The combination of i1, i2 has been visited and return false
 	public static boolean isInterleave(String s1, String s2, String s3) {
 		if(s3.length() != s1.length() + s2.length())
