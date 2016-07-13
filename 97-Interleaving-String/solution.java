@@ -8,6 +8,6 @@ public class Solution {
         
         if(p1==s1.length()) return s2.substring(p2).equals(s3.substring(p3));
         if(p2==s2.length()) return s1.substring(p1).equals(s3.substring(p3));
-        return (s1.charAt(p1)==s3.charAt(p3++) && interleave(s1, p1+1, s2, p2, s3, p3)) || (s2.charAt(p2)==s3.charAt(p3++) && interleave(s1, p1, s2, p2+1, s3, p3));
+        return (s1.charAt(p1)==s3.charAt(p3) && interleave(s1, p1+1, s2, p2, s3, p3+1)) || (s2.charAt(p2)==s3.charAt(p3) && interleave(s1, p1, s2, p2+1, s3, p3+1));
     }
 }
