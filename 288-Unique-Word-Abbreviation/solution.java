@@ -1,27 +1,33 @@
 public class ValidWordAbbr {
-    private Set<String> dict;
-
+    
+    HashMap<String, String> map;
     public ValidWordAbbr(String[] dictionary) {
-        dict = new HashSet<String>();
-        for(String s : dictionary){
-            String abbr = abbr(s);
-            if(!dict.contains(abbr)) dict.add(abbr);
+        map = new HashMap<String, String>();
+        for(String str:dictionary){
+            String key = getKey(str);
+            // If there is more than one string belong to the same key
+            // then the key will be invalid, we set the value to ""
+            if(map.containsKey(key)){
+                if(!map.get(key).equals(str)){
+                    map.put(key, "");
+                }
+            }
+            else{
+                map.put(key, str);
+            }
         }
     }
 
     public boolean isUnique(String word) {
-        String w_abbr = abbr(word);
-        if(dict.contains(w_abbr)) return false;
-        else return true;
+        return !map.containsKey(getKey(word))||map.get(getKey(word)).equals(word);
     }
     
-    public String abbr(String s){
-        if(s.length()<=2) return s;
-        else{
-            return s.charAt(0)+(s.length()-2)+s.charAt(s.length()-1);
-        }
+    String getKey(String str){
+        if(str.length()<=2) return str;
+        return str.charAt(0)+Integer.toString(str.length()-2)+str.charAt(str.length()-1);
     }
 }
+
 
 
 // Your ValidWordAbbr object will be instantiated and called as such:
