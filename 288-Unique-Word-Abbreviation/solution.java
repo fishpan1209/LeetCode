@@ -2,16 +2,16 @@ public class ValidWordAbbr {
     private Set<String> dict;
 
     public ValidWordAbbr(String[] dictionary) {
-        set = new HashSet<String>();
+        dict = new HashSet<String>();
         for(String s : dictionary){
             String abbr = abbr(s);
-            if(!set.contains(abbr)) set.add(abbr);
+            if(!dict.contains(abbr)) dict.add(abbr);
         }
     }
 
     public boolean isUnique(String word) {
         String w_abbr = abbr(word);
-        if(set.contains(w_abbr)) return false;
+        if(dict.contains(w_abbr)) return false;
         else return true;
     }
     
