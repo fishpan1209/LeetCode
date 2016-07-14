@@ -21,7 +21,7 @@ public class Solution {
                 }
             }
             int cur_left = 0;
-            for(int j=0; j<n; i++){
+            for(int j=0; j<n; j++){
                 if(matrix[i][j]=='1'){
                     height[j]++;
                     left[j] = Math.max(left[j],cur_left);
@@ -29,9 +29,12 @@ public class Solution {
                 else{
                     height[j] = 0;
                     left[j] = 0;
-                    cur_left++;
+                    cur_left = j+1;
                 }
-                max = Math.max(max, right[j]-left[j])*height[j];
+            }
+            
+            for(int j=0; j<n; j++){
+                max = Math.max(max, (right[j]-left[j])*height[j]);
             }
             
         }
