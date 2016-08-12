@@ -24,7 +24,7 @@ public class Solution {
         UndirectedGraphNode res = new UndirectedGraphNode(node.label);
         map.put(res.label, res);
         for(UndirectedGraphNode neighbor : node.neighbors){
-            res.neighbor.add(clone(neighbor));
+            res.neighbor.add(clone(neighbor, map));
         }
         return res;
     }
