@@ -14,7 +14,7 @@ public class Solution {
         return clone(node, map);
     }
     
-    publc UndirectedGraphNode clone(UndirectedGraphNode node, HashMap<Integer, UndirectedGraphNode> map){
+    public UndirectedGraphNode clone(UndirectedGraphNode node, HashMap<Integer, UndirectedGraphNode> map){
         if(node==null) return node;
         // this node has already been visited as a neighbor
         if(map.containsKey(node.label)){
