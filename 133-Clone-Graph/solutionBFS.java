@@ -22,7 +22,7 @@ public class Solution {
         queue.add(node);
         
         while(!queue.isEmpty()){
-            UndirectedGraphNode current = queue.poll();
+            UndirectedGraphNode current = queue.pop();
             for(UndirectedGraphNode neighbor : current.neighbors){
                 // if not visited, add to map and queue
                 if(!map.containsKey(neighbor.label)){
