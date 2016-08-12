@@ -26,7 +26,8 @@ public class Solution {
             for(UndirectedGraphNode neighbor : current.neighbors){
                 // if not visited, add to map and queue
                 if(!map.containsKey(neighbor.label)){
-                    map.put(neighbor.label, neighbor);
+                    // must create a new graph node
+                    map.put(neighbor.label, new UndirectedGraphNode(neighbor.label));
                     queue.add(neighbor);
                 }
                 // else add this node as a neighbor of current node
