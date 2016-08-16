@@ -10,6 +10,9 @@ public class NumArray {
     }
 
     public int sumRange(int i, int j) {
+        // include i and j
+        // sum[j+1] sum of all numbers before(and include) j;
+        // sum[i] sum of all numbers before(and include) i-1
         return sum[j+1]-sum[i];
     }
 }
