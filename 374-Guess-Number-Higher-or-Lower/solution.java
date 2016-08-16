@@ -5,10 +5,13 @@
 
 public class Solution extends GuessGame {
     public int guessNumber(int n) {
-        while(guess(n)!=0){
-            if(guess(n)==1) n++;
-            else n--;
-        }
-        return n;
+        return guessBST(1, n);
+    }
+    
+    public int guessBST(int left, int right){
+        int mid = (left+right)/2;
+        if(guess(mid)==0) return mid;
+        else if(guess(mid)==1) return guessBST(mid+1, right);
+        else return guessBST(left, mid-1);
     }
 }
