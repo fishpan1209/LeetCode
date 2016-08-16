@@ -2,7 +2,7 @@ public class NumMatrix {
     private int[][] sum;
 
     public NumMatrix(int[][] matrix) {
-        if(matrix==null || matrix.length==0 || matrix[0].length==0) return
+        if(matrix==null || matrix.length==0 || matrix[0].length==0) return;
         sum = new int[matrix.length+1][matrix[0].length+1];
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
