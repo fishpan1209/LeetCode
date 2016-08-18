@@ -15,7 +15,7 @@ public class NumArray {
         build(nums, 0, n-1, 0);
     }
 
-    void update(int i, int val) {
+    public void update(int i, int val) {
         if(i<0 || i>=n) return;
         int diff = val-nums[i];
         nums[i] = val;
@@ -55,14 +55,6 @@ public class NumArray {
             update(start, mid, i, diff, 2*pos+1);
             update(mid+1, end, i, diff, 2*pos+2);
         }
-    }
-    
-    public static void main(String[] args){
-    	int[] nums = new int[]{1,3,5};
-    	NumArray numArray = new NumArray(nums);
-    	numArray.sumRange(0, 1);
-    	numArray.update(1, 10);
-    	numArray.sumRange(1, 2);
     }
 }
 
