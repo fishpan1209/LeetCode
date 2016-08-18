@@ -23,7 +23,7 @@ public class NumArray {
     }
 
     public int sumRange(int i, int j) {
-        if(i<0 || j>=n || i>j) return -1;
+        if(i<0 || j>=n || i>j) return 0;
         return getSumRange(i, j, 0, n-1, 0);
     }
     
@@ -40,11 +40,11 @@ public class NumArray {
     
     private int getSumRange(int qs, int qe, int start, int end, int pos){
         if(qs<=start && qe>=end) return segmentTree[pos];
-        else if(qs> end || qe<start) return 0;
-        else{
-            int mid = start+(end-start)/2;
-            return getSumRange(qs, qe, start, mid, 2*pos+1)+getSumRange(qs, qe, mid+1, end, 2*pos+2);
-        }
+        if(qs> end || qe<start) return 0;
+    
+        int mid = start+(end-start)/2;
+        return getSumRange(qs, qe, start, mid, 2*pos+1)+getSumRange(qs, qe, mid+1, end, 2*pos+2);
+        
     }
     
     private void update(int start, int end, int i, int diff, int pos){
