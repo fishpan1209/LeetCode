@@ -27,7 +27,7 @@ public class NumArray {
         return getSumRange(i, j, 0, n-1, 0);
     }
     
-    priave void build(int[] nums, int start, int end, int pos){
+    private void build(int[] nums, int start, int end, int pos){
         if(start==end){
             segmentTree[pos] = nums[start];
             return;
