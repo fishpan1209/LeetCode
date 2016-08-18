@@ -16,32 +16,41 @@
  * }
  */
 public class Solution {
+    private ListNode node;
     
-    private static class State {
-        ListNode head;
-        State(ListNode head) {
-            this.head = head;
-        }
-    }
+    
     public TreeNode sortedListToBST(ListNode head) {
-        return sortedListToBST(size(head), new State(head));
-    }
-    private TreeNode sortedListToBST(int size, State state) {
-        if (size<=0) return null;
-        int mid = size/2;
-        TreeNode root = new TreeNode(0);
-        root.left = sortedListToBST(mid, state);
-        root.val = state.head.val;
-        state.head = state.head.next;
-        root.right = sortedListToBST(size - mid - 1, state);
-        return root;
-    }
-    private int size(ListNode head) {
-        int size = 0;
-        while (head != null) {
-            head = head.next;
-            size++;
+        if(head == null){
+		    return null;
+	     }
+	
+	     int size = 0;
+	     ListNode runner = head;
+	     node = head;
+	
+	     while(runner != null){
+	     	runner = runner.next;
+		    size ++;
         }
-        return size;
+	
+	   return inorderHelper(0, size - 1);
     }
+
+public TreeNode inorderHelper(int start, int end){
+	if(start > end){
+		return null;
+	}
+	
+	int mid = start + (end - start) / 2;
+	TreeNode left = inorderHelper(start, mid - 1);
+	
+	TreeNode treenode = new TreeNode(node.val);
+	treenode.left = left;
+	node = node.next;
+
+	TreeNode right = inorderHelper(mid + 1, end);
+	treenode.right = right;
+	
+	return treenode;
+}
 }

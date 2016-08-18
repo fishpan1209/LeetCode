@@ -18,6 +18,6 @@ Given a singly linked list where elements are sorted in ascending order, convert
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
 
-<span class="hidebutton">[(M) Convert Sorted Array to Binary Search Tree](/problems/convert-sorted-array-to-binary-search-tree/)</span></div>
+<span class="hidebutton" style="display: inline;">[(M) Convert Sorted Array to Binary Search Tree](/problems/convert-sorted-array-to-binary-search-tree/)</span></div>
