@@ -56,6 +56,14 @@ public class NumArray {
             update(mid+1, end, i, diff, 2*pos+2);
         }
     }
+    
+    public static void main(String[] args){
+    	int[] nums = new int[]{1,3,5};
+    	NumArray numArray = new NumArray(nums);
+    	numArray.sumRange(0, 1);
+    	numArray.update(1, 10);
+    	numArray.sumRange(1, 2);
+    }
 }
 
 
