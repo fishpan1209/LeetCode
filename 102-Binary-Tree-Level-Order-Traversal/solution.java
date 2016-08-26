@@ -9,21 +9,18 @@
  */
 public class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
-        levelOrder(root, res, 0);
+        List<List<Integer>> res = new ArrayList();
+        level(root, res, 0);
         return res;
     }
     
-    public void levelOrder(TreeNode root, List<List<Integer>> res, int level){
+    public void level(TreeNode root, List<List<Integer>> res, int level){
         if(root==null) return;
-        if(res.size()<=level){
-            List<Integer> cur = new ArrayList();
-            res.add(cur);
+        if(level >= res.size()) {
+            res.add(new ArrayList());
         }
-        
-        List<Integer> cur = res.get(level);
-        cur.add(root.val);
-        levelOrder(root.left, res, level+1);
-        levelOrder(root.right, res, level+1);
+        res.get(level).add(root.val);
+        level(root.left, res, level+1);
+        level(root.right, res, level+1);
     }
 }
