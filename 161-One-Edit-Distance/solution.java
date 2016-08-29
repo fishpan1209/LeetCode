@@ -1,29 +1,21 @@
 public class Solution {
     public boolean isOneEditDistance(String s, String t) {
-        if(Math.abs(s.length()-t.length())>=2) return false;
-        int dist = 0;
-        if(s.length()==t.length()){
-            for(int i=0; i<s.length(); i++){
-                if(dist>1) return false;
-                if(s.charAt(i)!=t.charAt(i)) dist += 1;
+        int sl = s.length();
+        int tl = t.length();
+        if(Math.abs(sl-tl)>=2) return false;
+        
+        // three scenerios: 
+        // equal length: abc vs adc
+        // 1 char in length: ab vs abc   || acb vs ab
+        
+        String ll = sl>tl? s : t;
+        String ss = sl>tl? t : s;
+        for(int i=0; i<ss.length(); i++){
+            if(ss.charAt(i)!=ll.charAt(i)){
+                if(sl==tl) return ss.substring(i+1, sl).equals(ll.substring(i+1,sl));
+                else return ll.substring(i+1, ll.length()).equals(ss.substring(i, ss.length()));
             }
         }
-        else{
-            String longer = s.length()>t.length()? s : t;
-            String shorter = s.length()>t.length()? t : s;
-            int i=0, j=0;
-            while(j<shorter.length()){
-                if(longer.charAt(i)!=shorter.charAt(j)){
-                    if(longer.charAt(i+1)==shorter.charAt(j)){
-                        dist += 1;
-                        i+=1;
-                    }
-                    else return false;
-                }
-                i++;
-                j++;
-            }
-        }
-        return dist==1;
+        return ll.length()-ss.length()==1;
     }
 }
