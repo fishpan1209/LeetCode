@@ -7,7 +7,6 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-import java.util.HashMap;
 public class Solution {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         HashMap<Integer, Integer> map = new HashMap();
